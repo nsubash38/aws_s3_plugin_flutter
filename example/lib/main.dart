@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:aws_s3_plugin_flutter/aws_s3_plugin_flutter.dart';
@@ -41,7 +40,7 @@ class CreateMessageState extends State<CreateMessage> {
   @override
   void initState() {
     super.initState();
-    readEnv();
+    // readEnv();
   }
 
   static Future<String> getPresignedURLFromUnsigned(String urlString) async {
@@ -69,15 +68,15 @@ class CreateMessageState extends State<CreateMessage> {
     }
   }
 
-  void readEnv() async {
-    final str = await rootBundle.loadString(".env");
-    if (str.isNotEmpty) {
-      final decoded = jsonDecode(str);
-      poolId = decoded["poolId"];
-      awsFolderPath = decoded["awsFolderPath"];
-      bucketName = decoded["bucketName"];
-    }
-  }
+  // void readEnv() async {
+  //   final str = await rootBundle.loadString(".env");
+  //   if (str.isNotEmpty) {
+  //     final decoded = jsonDecode(str);
+  //     poolId = decoded["poolId"];
+  //     awsFolderPath = decoded["awsFolderPath"];
+  //     bucketName = decoded["bucketName"];
+  //   }
+  // }
 
   // Pick image
   pickerModal(ctx) {

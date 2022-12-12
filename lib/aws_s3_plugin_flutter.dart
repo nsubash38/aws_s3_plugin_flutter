@@ -8,21 +8,21 @@ class AwsS3PluginFlutter {
   final File file;
   final String fileNameWithExt;
   final String awsFolderPath;
-  final String poolId;
+  final String? poolId;
   final Regions region;
   final String bucketName;
   final String AWSAccess;
   final String AWSSecret;
 
   AwsS3PluginFlutter({
-    @required this.file,
-    @required this.fileNameWithExt,
-    @required this.awsFolderPath,
+    required this.file,
+    required this.fileNameWithExt,
+    required this.awsFolderPath,
     this.poolId,
     this.region = Regions.US_WEST_2,
-    @required this.bucketName,
-    @required this.AWSAccess,
-    @required this.AWSSecret,
+    required this.bucketName,
+    required this.AWSAccess,
+    required this.AWSSecret,
   });
 
   static const EventChannel _eventChannel =
